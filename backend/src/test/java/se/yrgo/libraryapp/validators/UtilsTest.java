@@ -2,8 +2,6 @@ package se.yrgo.libraryapp.validators;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.EmptySource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +10,7 @@ public class UtilsTest {
     @ParameterizedTest
     @CsvSource({
             "'Hello World', 'hello world'",
+            "'Hello_World', 'helloworld'",
             "'Hello World123', 'hello world'",
             "'Hello!@#$%^&*World', 'helloworld'",
             "'Hello1    World2  Test3', 'hello    world  test'",
