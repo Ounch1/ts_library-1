@@ -20,4 +20,6 @@ public class UsernameTest {
     void incorrectUsername(String username) {
         assertFalse(Username.validate(username), "Expected invalid username: " + username);
     }
+
+
 }
