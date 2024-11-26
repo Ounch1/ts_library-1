@@ -15,7 +15,7 @@ public class UsernameTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"usr", "user name", "user!", "user⊕", "****", "u123"})
+    @ValueSource(strings = {"usr", "user name", "user!", "user⊕", "****", "u123", "user "})
     @EmptySource
     void incorrectUsername(String username) {
         assertFalse(Username.validate(username), "Expected invalid username: " + username);
