@@ -24,6 +24,9 @@ public final class Username {
      * 
      */
     public static boolean validate(String name) {
+        if (name == null || name.isEmpty()) {
+            return false; // Or throw an IllegalArgumentException, based on your desired behavior
+        }
         return regex.matcher(name).matches();
     }
 }

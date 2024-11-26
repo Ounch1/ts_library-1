@@ -2,6 +2,7 @@ package se.yrgo.libraryapp.validators;
 
 import  org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -19,5 +20,11 @@ public class UsernameTest {
     @EmptySource
     void incorrectUsername(String username) {
         assertFalse(Username.validate(username), "Expected invalid username: " + username);
+    }
+
+    @ParameterizedTest
+    @NullAndEmptySource
+    void invalidForNullAndEmpty(String username) {
+        assertFalse(Username.validate(username), "Expected invalid username for null/empty input");
     }
 }
